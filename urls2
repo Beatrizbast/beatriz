@@ -1,0 +1,22 @@
+nohup sh urls2.sh !1°|
+
+vi /etc/systemd/system/urls2.service
+---------------------------------------------------------------------------------------------------------
+[Unit]
+Description=Servicio de monitoreo de URLS
+After=network.target
+
+[Service]
+ExecStart=/root/RC9.1_beatriz/urls2.sh
+Restart=always
+WorkingDirectory=/RC9.1_beatriz/urls2.sh
+
+[Install]
+WantedBy=multi-user.target
+
+----------------------------------------------------------------------------------------------------------
+
+systemctl daemon-reload
+systemctl status urls2
+
+systemforce 0
